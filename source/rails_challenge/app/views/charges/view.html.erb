@@ -1,0 +1,22 @@
+<div id="failed-charges">
+  <h1>Failed Charges</h1>
+  <ul>
+    <%= render partial: 'failed_disputed_charge', locals: {charges: @failed_charges} %>
+  </ul>
+</div>
+
+<div id="disputed-charges">
+  <h1>Disputed Charges</h1>
+  <ul>
+    <%= render partial: 'failed_disputed_charge', locals: {charges: @disputed_charges} %>
+  </ul>
+</div>
+
+<div id="successful-charges">
+  <h1>Successful Charges</h1>
+  <ul>
+    <% @successful_charges.each do |sc| -%>
+      <li><%= number_to_currency(sc.amount) %></li>
+    <% end -%>
+  </ul>
+</div>

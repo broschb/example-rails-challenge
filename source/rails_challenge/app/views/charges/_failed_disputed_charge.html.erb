@@ -1,0 +1,4 @@
+<% charges.each do |c| -%>
+  <li><%= c.customer.full_name %> <%= number_to_currency(c.amount) %> <%= pretty_date(c.created) %></li>
+<% end -%>
+
